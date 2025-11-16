@@ -1,5 +1,28 @@
 # Transjakarta Fleet Backend (Golang)
 
+## Alur Kerja (Workflow)
+
+```
+Publisher (Go) --> MQTT Broker (Mosquitto) --> Backend (Go)
+                                               |
+                                               |--> PostgreSQL (Store locations)
+                                               |
+                                               |--> RabbitMQ (Geofence events) --> Worker (Go) (Logs alerts)
+                                               |
+                                               |--> API (Gin) (Serves location data)
+```
+
+1. **Publisher**: Mengirim data lokasi kendaraan ke MQTT broker setiap 2 detik.
+2. **MQTT Broker**: Menerima dan mendistribusikan pesan lokasi.
+3. **Backend**:
+   - Subscribe ke MQTT, validasi dan simpan data ke PostgreSQL.
+   - Cek apakah kendaraan dalam geofence (radius 50m dari titik tertentu).
+   - Jika ya, kirim event geofence ke RabbitMQ.
+   - Serve API untuk query lokasi kendaraan.
+4. **Worker**: Konsumsi event geofence dari RabbitMQ dan log ke console.
+5. **PostgreSQL**: Penyimpanan data lokasi kendaraan.
+6. **RabbitMQ**: Queue untuk event geofence.
+
 ## Tes Teknis: Backend Engineer - Transjakarta Sistem Manajemen Armada
 
 ### Deskripsi Proyek
