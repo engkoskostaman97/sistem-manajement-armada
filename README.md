@@ -23,7 +23,7 @@ Publisher (Go) --> MQTT Broker (Mosquitto) --> Backend (Go)
 5. **PostgreSQL**: Penyimpanan data lokasi kendaraan.
 6. **RabbitMQ**: Queue untuk event geofence.
 
-## Tes Teknis: Backend Engineer - Transjakarta Sistem Manajemen Armada
+##  Sistem Manajemen Armada
 
 ### Deskripsi Proyek
 Sistem backend untuk manajemen armada Transjakarta yang dapat:
