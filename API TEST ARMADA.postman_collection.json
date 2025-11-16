@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "afb38f0e-c311-49a5-b81f-e68a11f42681",
+		"name": "API TEST ARMADA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23207605"
+	},
+	"item": [
+		{
+			"name": "History start end",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/vehicles/B1234XYZ/history?start=1763256279&end=1763256281",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vehicles",
+						"B1234XYZ",
+						"history"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "1763256279"
+						},
+						{
+							"key": "end",
+							"value": "1763256281"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ALL History",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/vehicles/B1234XYZ/history",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vehicles",
+						"B1234XYZ",
+						"history"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Location final",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/vehicles/B1234XYZ/location",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vehicles",
+						"B1234XYZ",
+						"location"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
